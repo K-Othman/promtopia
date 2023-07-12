@@ -1,13 +1,13 @@
 import { Schema, model, models } from "mongoose";
 
-const UserSchema = newSchema({
+const UserSchema = new Schema({
   email: {
-    type: string,
+    type: String,
     unique: [true, "Email already exists!"],
     required: [true, "Email is required!"],
   },
   username: {
-    type: string,
+    type: String,
     required: [true, "Username already exists!"],
     match: [
       /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
